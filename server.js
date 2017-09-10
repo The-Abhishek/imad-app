@@ -20,12 +20,14 @@ function createTemplate (data){
     var content=data.content;
         var htmlTemplate=`
         <html>
+        <head>
             <title>
                ${title}
             </title>
-            <style>
-                    
-                </style>
+             <meta name="viewport" content="width=device-width,initial-scale=1" />
+              <link href="/ui/style.css" rel="stylesheet" />
+           
+            </head>
             <body>
                 <div class='container'>
                     
@@ -33,7 +35,7 @@ function createTemplate (data){
                     <div>
                         <a href='/'>home</a>
                     </div>
-                    <meta name="viewport" content="width=device-width,initial-scale=1" />
+                   
                     
                    
                        
