@@ -4,7 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var Articleone={
+var Articles={
+'Articleone':{
   title:'article one',
   heading:'Arti-1',
   date:'sept29,2017',
@@ -12,6 +13,23 @@ var Articleone={
   <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
             <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
             `
+},
+'Articletwo':{
+    title:'article two',
+  heading:'Arti-2',
+  date:'sept29,2017',
+  content:`
+  <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
+            <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
+            `},
+'Articlethree':{
+    title:'article three',
+  heading:'Arti-3',
+  date:'sept29,2017',
+  content:`
+  <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
+            <p>this is article one.and you know that.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.this is article one.</p>
+            ` }
 };
 function createTemplate (data){
     var title=data.title;
@@ -62,14 +80,9 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article_one',function(req,res){
-  res.send(createTemplate(Articleone)); 
-});
-app.get('/article_two',function(req,res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));  
-});
-app.get('/article_three',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
+app.get('/:ArticleName',function(req,res){
+    var ArticleName=req.params.ArticleName;
+  res.send(createTemplate(ArticleName)); 
 });
 
 app.get('/ui/style.css', function (req, res) {
@@ -88,4 +101,4 @@ var port = 80;
 app.listen(port, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
-   
+  
