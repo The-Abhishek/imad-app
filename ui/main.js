@@ -2,11 +2,11 @@ console.log('Loaded!');
 var element=document.getElementById('main-text');
 element.innerHTML='abhi listen';
 var img=document.getElementById('madi');
-var marginLeft=0;
+var ml=0;
 function moveRight()
 {
-    marginLeft=marginLeft+6;
-    img.style.marginLeft=marginLeft+'px';
+    ml=ml+6;
+    img.style.ml=ml+'px';
 }
 img.onclick=function()
 {
