@@ -16,6 +16,6 @@ function moveLeft()
 img.onclick=function()
 {
     var interval=setInterval(moveRight,80);
-    var interval=setInterval(moveLeft,80);
+    var interval1=setInterval(moveLeft,80);
   
 };
