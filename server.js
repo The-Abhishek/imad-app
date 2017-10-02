@@ -82,7 +82,7 @@ app.get('/', function (req, res) {
 });
 var count=0;
 app.get('/counter',function(req,res){
-    countr=count+1;
+    count=count+1;
     res.send(count,tostring());
 });
 app.get('/:articleName',function(req,res){
