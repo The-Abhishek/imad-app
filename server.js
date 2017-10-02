@@ -80,6 +80,11 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var count=0;
+app.get('/counter',function(req,res){
+    countr=count+1;
+    res.send(count,tostring());
+});
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
   res.send(createTemplate(articles[articleName])); 
