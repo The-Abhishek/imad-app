@@ -82,8 +82,8 @@ app.get('/', function (req, res) {
 });
 var count=0;
 app.get('/counter',function(req,res){
-    count=count+1;
-    res.send(count,tostring());
+    counter=counter+1;
+    res.send(counter.tostring());
 });
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
